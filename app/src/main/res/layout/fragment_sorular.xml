@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.SorularFragment">
+
+    <LinearLayout
+        android:id="@+id/kampanyaHeader"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/soruBackImage"
+            android:layout_height="30dp"
+            android:background="@drawable/back"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:text="Sorular"
+            android:layout_marginLeft="90dp"
+            android:textColor="#000"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/soruRecyView">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
