@@ -1,6 +1,9 @@
 package com.example.veterineradmin.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
@@ -14,7 +17,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ChangeFragments changeFragments = new ChangeFragments(MainActivity.this);
-        changeFragments.change(new HomeFragment());
+        change();
     }
+
+    public void change()
+    {
+        Fragment newFragment = new HomeFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.mainFrameLayout, newFragment);
+        transaction.disallowAddToBackStack();
+        transaction.commit();
+    }
+
 }

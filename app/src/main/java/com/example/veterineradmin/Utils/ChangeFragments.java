@@ -22,6 +22,7 @@ public class ChangeFragments {
         ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
                 .replace(R.id.mainFrameLayout,fragment,"fragment")
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -32,6 +33,7 @@ public class ChangeFragments {
         fragment.setArguments(bundle);//fragmentler arası veri aktarımı
         ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
                 .replace(R.id.mainFrameLayout,fragment,"fragment")
+                .addToBackStack(null)
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
     }
